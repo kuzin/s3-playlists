@@ -1,0 +1,18 @@
+{
+			"name": "s3-playlists",
+			"title": "S3 Playlists",
+			"description": "My Playlists from S3",
+			"author": "Kuz",
+			"version": "1.0.0",
+			"minimumCoreVersion": "0.6.0",
+			"compatibleCoreVersion":"0.7.0",
+			"packs": [
+    					{
+      					"name": "s3-playlist",
+      					"label": "Playlists from S3",
+      					"path": "packs/s3-music.db",
+      					"entity": "Playlist"
+						}
+					]
+		  }
+		
