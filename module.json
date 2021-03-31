@@ -6,7 +6,7 @@
 			"version": "1.0.0",
 			"minimumCoreVersion": "0.6.0",
 			"compatibleCoreVersion":"0.7.0",
-			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.zip",
+			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.1.zip",
 			"packs": [
     					{
       					"name": "s3-playlist",
