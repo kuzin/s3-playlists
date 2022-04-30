@@ -5,8 +5,8 @@
 			"author": "Kuz",
 			"version": "1.2.0",
 			"minimumCoreVersion": "0.6.0",
-			"compatibleCoreVersion":"0.8.9",
-			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.3.zip",
+			"compatibleCoreVersion":"0.9.0",
+			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.4.zip",
 			"packs": [
     					{
       					"name": "s3-playlist",
