@@ -3,11 +3,11 @@
 			"title": "S3 Playlists",
 			"description": "My Playlists from S3",
 			"author": "Kuz",
-			"version": "1.5.1",
+			"version": "1.6.0",
 			"minimumCoreVersion": "0.6.0",
 			"compatibleCoreVersion":"0.9.0",
 			"manifest": "https://raw.githubusercontent.com/kuzin/s3-playlists/main/module.json",
-			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.6.zip",
+			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.6.0.zip",
 			"packs": [
     					{
       					"name": "s3-playlist",
