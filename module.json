@@ -1,20 +1,19 @@
 {
-			"name": "s3-playlists",
-			"title": "S3 Playlists",
-			"description": "My Playlists from S3",
-			"author": "Kuz",
-			"version": "1.6.0",
-			"minimumCoreVersion": "0.6.0",
-			"compatibleCoreVersion":"0.9.0",
-			"manifest": "https://raw.githubusercontent.com/kuzin/s3-playlists/main/module.json",
-			"download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.6.0.zip",
-			"packs": [
-    					{
-      					"name": "s3-playlist",
-      					"label": "Playlists from S3",
-      					"path": "packs/s3-music.db",
-      					"entity": "Playlist"
-						}
-					]
-		  }
-		
+  "name": "s3-playlists",
+  "title": "S3 Playlists",
+  "description": "My Playlists from S3",
+  "author": "Kuz",
+  "version": "1.7.0",
+  "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.10.0",
+  "manifest": "https://raw.githubusercontent.com/kuzin/s3-playlists/main/module.json",
+  "download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.7.0.zip",
+  "packs": [
+    {
+      "name": "s3-playlist",
+      "label": "Playlists from S3",
+      "path": "packs/s3-music.db",
+      "entity": "Playlist"
+    }
+  ]
+}
