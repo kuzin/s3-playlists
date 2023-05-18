@@ -7,7 +7,7 @@
   "minimumCoreVersion": "0.6.0",
   "compatibleCoreVersion": "0.10.0",
   "manifest": "https://raw.githubusercontent.com/kuzin/s3-playlists/main/module.json",
-  "download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.7.0.zip",
+  "download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.8.0.zip",
   "packs": [
     {
       "name": "ambient",
