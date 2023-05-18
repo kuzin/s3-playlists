@@ -3,16 +3,70 @@
   "title": "S3 Playlists",
   "description": "My Playlists from S3",
   "author": "Kuz",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "minimumCoreVersion": "0.6.0",
   "compatibleCoreVersion": "0.10.0",
   "manifest": "https://raw.githubusercontent.com/kuzin/s3-playlists/main/module.json",
   "download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.7.0.zip",
   "packs": [
     {
-      "name": "s3-playlist",
-      "label": "Playlists from S3",
-      "path": "packs/s3-music.db",
+      "name": "ambient",
+      "label": "Ambient Tracks",
+      "path": "packs/ambient.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "combat",
+      "label": "Combat Tracks",
+      "path": "packs/combat.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "crits",
+      "label": "Critical SFX",
+      "path": "packs/crits.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "exploration",
+      "label": "Exploration Mode",
+      "path": "packs/crits.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "locations",
+      "label": "Locations",
+      "path": "packs/locations.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "moods",
+      "label": "Moods",
+      "path": "packs/moods.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "sfx",
+      "label": "Sound Effects",
+      "path": "packs/sfx.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "special",
+      "label": "Special Tracks",
+      "path": "packs/special.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "themes",
+      "label": "Themes",
+      "path": "packs/themes.db",
+      "entity": "Playlist"
+    },
+    {
+      "name": "gelphi",
+      "label": "Michael Ghelfi Tracks",
+      "path": "packs/gelphi.db",
       "entity": "Playlist"
     }
   ]
