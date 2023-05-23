@@ -3,11 +3,11 @@
   "title": "S3 Playlists",
   "description": "My Playlists from S3",
   "author": "Kuz",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "minimumCoreVersion": "0.6.0",
   "compatibleCoreVersion": "0.10.0",
   "manifest": "https://raw.githubusercontent.com/kuzin/s3-playlists/main/module.json",
-  "download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.8.0.zip",
+  "download": "https://github.com/kuzin/s3-playlists/archive/refs/tags/1.8.1.zip",
   "packs": [
     {
       "name": "ambient",
@@ -22,7 +22,7 @@
       "entity": "Playlist"
     },
     {
-      "name": "crits",
+      "name": "crit",
       "label": "Critical SFX",
       "path": "packs/crits.db",
       "entity": "Playlist"
@@ -30,7 +30,7 @@
     {
       "name": "exploration",
       "label": "Exploration Mode",
-      "path": "packs/crits.db",
+      "path": "packs/exploration.db",
       "entity": "Playlist"
     },
     {
