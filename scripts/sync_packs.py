@@ -5,6 +5,7 @@ Discover S3 prefixes from existing pack DBs, or sync pack .db files from live S3
 Usage:
   python scripts/sync_packs.py discover [--output sync-packs.json]
   python scripts/sync_packs.py sync [--config sync-packs.json] [--dry-run]
+  python scripts/sync_packs.py enrich [--config sync-packs.json] [--dry-run] [--force]
 """
 
 from __future__ import annotations
@@ -122,6 +123,10 @@ def cmd_discover(repo: Path, output: Path) -> None:
             "volume": 0.72,
             "sorting": "a",
             "sound_description": "empty",
+            "playlist_description": {
+                "mode": "template",
+                "template": "{name} playlist. Streamed from {prefix}",
+            },
             "display_name": {
                 "strip_leading_index": True,
                 "hyphen_to_space": True,
@@ -213,6 +218,26 @@ def sound_description_for(
     if mode == "same_as_name":
         return display_name
     return ""
+
+
+def infer_prefix_from_doc(doc: dict[str, Any]) -> str | None:
+    """Infer S3 prefix from a playlist doc's first sound URL."""
+    sounds = doc.get("sounds") or []
+    if not sounds:
+        return None
+    key = url_to_key(sounds[0].get("path", ""))
+    if not key:
+        return None
+    return key_to_prefix(key)
+
+
+def render_template(template: str, *, name: str, prefix: str) -> str:
+    # Prefix values in this repo usually end with '/', but templates read nicer without it.
+    prefix_display = prefix.strip().rstrip("/")
+    return (
+        template.replace("{name}", name)
+        .replace("{prefix}", prefix_display)
+    )
 
 
 def cmd_sync(repo: Path, config_path: Path, dry_run: bool) -> None:
@@ -346,6 +371,72 @@ def cmd_sync(repo: Path, config_path: Path, dry_run: bool) -> None:
             print(f"wrote {rel} ({len(lines_out)} playlists)")
 
 
+def cmd_enrich(repo: Path, config_path: Path, dry_run: bool, force: bool) -> None:
+    """
+    Fill empty playlist descriptions (Playlist.description) using sync-packs.json defaults.
+
+    This is intentionally "offline": it does not touch S3, so it's safe for quick quality-of-life DB improvements.
+    """
+    if not config_path.is_absolute():
+        config_path = (repo / config_path).resolve()
+    cfg = load_config(config_path)
+
+    defaults = cfg.get("defaults") or {}
+    playlist_desc_cfg = defaults.get("playlist_description") or {}
+    mode = playlist_desc_cfg.get("mode") or "template"
+    template = playlist_desc_cfg.get("template") or "{name} playlist"
+
+    for pack in cfg["packs"]:
+        rel = pack["path"]
+        out_path = repo / rel
+        existing = load_playlists_from_db(out_path)
+        if not existing:
+            continue
+
+        # Fast lookup by playlist id.
+        cfg_by_id: dict[str, dict[str, Any]] = {}
+        for pl in pack.get("playlists") or []:
+            pid = pl.get("playlist_id")
+            if pid:
+                cfg_by_id[pid] = pl
+
+        changed = False
+        lines_out: list[str] = []
+        for doc in existing:
+            current = (doc.get("description") or "").strip()
+            should_set = force or not current
+            if should_set:
+                name = doc.get("name") or ""
+                prefix = infer_prefix_from_doc(doc) or ""
+
+                override = None
+                pid = doc.get("_id")
+                if pid and pid in cfg_by_id:
+                    override = cfg_by_id[pid].get("description")
+                if override is not None:
+                    new_desc = str(override)
+                elif mode == "template":
+                    new_desc = render_template(template, name=name, prefix=prefix)
+                elif mode == "same_as_name":
+                    new_desc = name
+                else:
+                    new_desc = current
+
+                if new_desc != current:
+                    doc["description"] = new_desc
+                    changed = True
+
+            lines_out.append(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+
+        if changed:
+            text = "\n".join(lines_out) + "\n"
+            if dry_run:
+                print(f"[dry-run] would write {rel}")
+            else:
+                out_path.write_text(text, encoding="utf-8")
+                print(f"wrote {rel} (playlist descriptions updated)")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Foundry pack sync from S3")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -357,11 +448,22 @@ def main() -> None:
     s.add_argument("--config", "-c", type=Path, default=REPO_ROOT / "sync-packs.json")
     s.add_argument("--dry-run", action="store_true")
 
+    e = sub.add_parser(
+        "enrich",
+        help="Fill empty playlist descriptions in packs/*.db using sync-packs.json defaults",
+    )
+    e.add_argument("--config", "-c", type=Path, default=REPO_ROOT / "sync-packs.json")
+    e.add_argument("--dry-run", action="store_true")
+    e.add_argument("--force", action="store_true", help="Overwrite even non-empty descriptions")
+
     args = ap.parse_args()
     if args.cmd == "discover":
         cmd_discover(REPO_ROOT, args.output)
     else:
-        cmd_sync(REPO_ROOT, args.config, args.dry_run)
+        if args.cmd == "sync":
+            cmd_sync(REPO_ROOT, args.config, args.dry_run)
+        else:
+            cmd_enrich(REPO_ROOT, args.config, args.dry_run, args.force)
 
 
 if __name__ == "__main__":

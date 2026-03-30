@@ -6,6 +6,10 @@
     "volume": 0.72,
     "sorting": "a",
     "sound_description": "empty",
+    "playlist_description": {
+      "mode": "template",
+      "template": "{name} playlist. Streamed from {prefix}"
+    },
     "display_name": {
       "strip_leading_index": true,
       "hyphen_to_space": true,
