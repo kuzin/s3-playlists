@@ -11,7 +11,7 @@
       "hyphen_to_space": true,
       "underscore_to_space": true,
       "collapse_whitespace": true,
-      "title_case": false
+      "title_case": true
     }
   },
   "packs": [

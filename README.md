@@ -53,7 +53,7 @@ Playlists are driven by [`sync-packs.json`](sync-packs.json): each entry maps a 
 
 ### Display names (filename rules, no ID3 / no extra IAM)
 
-`defaults.display_name` controls how **track labels** are derived from each object key’s filename (stem): strip leading `01 - ` style index segments, replace `-` and `_` with spaces, collapse whitespace, optional `title_case`. Per-playlist overrides go under that playlist’s `display_name` (merged over defaults).
+`defaults.display_name` controls how **track labels** are derived from each object key’s filename (stem): strip leading `01 - ` style index segments, replace `-` and `_` with spaces, collapse whitespace, and **`title_case`** (default **on**; set to `false` under `display_name` to disable). Per-playlist overrides go under that playlist’s `display_name` (merged over defaults).
 
 - **`defaults.sound_description`**: `"empty"` (default) or `"same_as_name"` to copy the display string into each sound’s `description` field (Foundry’s subtitle-style field).
 - **`description`** on a playlist entry (optional): sets the Foundry **playlist** `description` when present in config; omit the key to leave an existing playlist description unchanged on sync.

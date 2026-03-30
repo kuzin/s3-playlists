@@ -6,7 +6,7 @@ This file is for **humans and AI assistants** working on `s3-playlists`. Keep it
 
 - **What it is:** Foundry VTT module: no JS; [`module.json`](module.json) + [`packs/*.db`](packs/) (JSONL, one playlist document per line).
 - **Audio:** HTTPS URLs to objects in S3 (virtual-hosted style URLs in the DBs).
-- **Config:** [`sync-packs.json`](sync-packs.json) maps each playlist to an S3 key prefix. [`scripts/sync_packs.py`](scripts/sync_packs.py): `discover` regenerates config from DBs; `sync` lists S3 and rewrites `.db` files (preserves sound `_id` when URL unchanged). **`defaults.display_name`** humanizes filename stems (strip index, hyphens to spaces, etc.); optional **`sound_description`**: `same_as_name`; per-playlist **`description`** for the playlist blurb.
+- **Config:** [`sync-packs.json`](sync-packs.json) maps each playlist to an S3 key prefix. [`scripts/sync_packs.py`](scripts/sync_packs.py): `discover` regenerates config from DBs; `sync` lists S3 and rewrites `.db` files (preserves sound `_id` when URL unchanged). **`defaults.display_name`** humanizes filename stems (strip index, hyphens to spaces, **`title_case`** on by default); optional **`sound_description`**: `same_as_name`; per-playlist **`description`** for the playlist blurb.
 
 ## Git: commit and push to `main`
 

@@ -127,7 +127,7 @@ def cmd_discover(repo: Path, output: Path) -> None:
                 "hyphen_to_space": True,
                 "underscore_to_space": True,
                 "collapse_whitespace": True,
-                "title_case": False,
+                "title_case": True,
             },
         },
         "packs": packs_out,
@@ -193,7 +193,7 @@ def humanize_stem(stem: str, opts: dict[str, Any]) -> str:
         s = s.replace("-", " ")
     if opts.get("collapse_whitespace", True):
         s = re.sub(r"\s+", " ", s).strip()
-    if opts.get("title_case", False):
+    if opts.get("title_case", True):
         s = s.title()
     return s or stem
 
