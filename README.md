@@ -92,6 +92,11 @@ gh workflow run sync-s3-packs.yml --ref main -f commit=true   # sync + commit pa
 gh workflow run sync-s3-packs.yml --ref main -f commit=false  # sync only, no commit
 ```
 
+If `commit=true` and the workflow finds changes in `packs/*.db`, it will also:
+- bump `module.json`'s patch `version`
+- create a matching git tag
+- trigger the Release workflow so Foundry downloads a new `s3-playlists.zip` (via `releases/latest`).
+
 Run from a clone of this repo or add `-R kuzin/s3-playlists`. Same as the Actions tab **Run workflow** button.
 
 **Repository secrets** (required for the workflow to talk to S3):

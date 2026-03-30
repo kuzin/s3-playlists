@@ -74,5 +74,36 @@ jobs:
             echo "No pack changes."
             exit 0
           fi
-          git commit -m "Sync pack DBs from S3"
-          git push
+
+          # When packs change, automatically bump module.json patch version and tag it.
+          # This ensures the new s3-playlists.zip is picked up by Foundry via releases/latest.
+          OLD_VER="$(jq -r .version module.json)"
+          if [ -z "$OLD_VER" ] || ! echo "$OLD_VER" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "error: module.json version must be semver (X.Y.Z). Got: $OLD_VER"
+            exit 1
+          fi
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$OLD_VER"
+
+          # Avoid tag collisions (rare, but possible if runs overlap).
+          for _ in 1 2 3 4 5; do
+            NEW_PATCH=$((PATCH+1))
+            NEW_VER="${MAJOR}.${MINOR}.${NEW_PATCH}"
+            TAG_REF="refs/tags/${NEW_VER}"
+            if git ls-remote --tags origin "$TAG_REF" | grep -q "$TAG_REF"; then
+              PATCH=$NEW_PATCH
+              continue
+            fi
+            # Update module.json version to the new tag version.
+            tmp="$(mktemp)"
+            jq --arg v "$NEW_VER" '.version = $v' module.json > "$tmp" && mv "$tmp" module.json
+
+            git add module.json
+            git commit -m "Sync pack DBs from S3 ($NEW_VER)"
+            git tag -a "$NEW_VER" -m "Release $NEW_VER"
+            git push
+            git push origin "$NEW_VER"
+            exit 0
+          done
+
+          echo "error: could not find a non-colliding release tag after several attempts"
+          exit 1

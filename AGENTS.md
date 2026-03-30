@@ -22,7 +22,7 @@ Unless the user explicitly asks otherwise (e.g. “don’t push”, draft PR onl
 |----------|------|--------|
 | Validate | [`.github/workflows/validate.yml`](.github/workflows/validate.yml) | On push/PR to `main`: valid `module.json`, pack paths exist. |
 | Release | [`.github/workflows/release.yml`](.github/workflows/release.yml) | On tag `*.*.*`: tag must match `module.json` `version`; uploads `s3-playlists.zip` to Releases. |
-| Sync S3 | [`.github/workflows/sync-s3-packs.yml`](.github/workflows/sync-s3-packs.yml) | Lists S3, runs `sync`; optional commit of `packs/*.db`. Needs `AWS_*` secrets. |
+| Sync S3 | [`.github/workflows/sync-s3-packs.yml`](.github/workflows/sync-s3-packs.yml) | Lists S3, runs `sync`; when it commits `packs/*.db` it auto-bumps `module.json` patch version + tags (triggering Release). Needs `AWS_*` secrets. |
 
 Workflow-level **`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true`** avoids Node 20 deprecation warnings for JS actions.
 
@@ -34,7 +34,7 @@ From the repo root (or pass `-R kuzin/s3-playlists`), after **`gh auth login`** 
 # Sync from S3 and commit/push updated packs/*.db to main (same as UI checkbox on)
 gh workflow run sync-s3-packs.yml --ref main -f commit=true
 
-# Sync only; do not commit (inspect logs / confirm no unwanted diffs)
+# Sync only; do not commit (inspect logs / confirm no unwanted diffs, no version bump)
 gh workflow run sync-s3-packs.yml --ref main -f commit=false
 ```
 
