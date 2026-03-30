@@ -104,6 +104,9 @@ def cmd_discover(repo: Path, output: Path) -> None:
                 entry["repeat"] = r0
             if v0 is not None:
                 entry["volume"] = v0
+            desc = (doc.get("description") or "").strip()
+            if desc:
+                entry["description"] = doc["description"]
             pl_cfg.append(entry)
         packs_out.append({"path": rel, "playlists": pl_cfg})
 
@@ -114,7 +117,19 @@ def cmd_discover(repo: Path, output: Path) -> None:
     root_cfg = {
         "bucket": bucket,
         "region": region,
-        "defaults": {"repeat": True, "volume": 0.72, "sorting": "a"},
+        "defaults": {
+            "repeat": True,
+            "volume": 0.72,
+            "sorting": "a",
+            "sound_description": "empty",
+            "display_name": {
+                "strip_leading_index": True,
+                "hyphen_to_space": True,
+                "underscore_to_space": True,
+                "collapse_whitespace": True,
+                "title_case": False,
+            },
+        },
         "packs": packs_out,
     }
     output.write_text(
@@ -157,9 +172,47 @@ def list_audio_keys(client: Any, bucket: str, prefix: str) -> list[str]:
     return sorted(keys)
 
 
-def sound_display_name(key: str) -> str:
+def merge_display_name_opts(defaults: dict[str, Any], pl: dict[str, Any]) -> dict[str, Any]:
+    a = dict(defaults.get("display_name") or {})
+    a.update(pl.get("display_name") or {})
+    return a
+
+
+def humanize_stem(stem: str, opts: dict[str, Any]) -> str:
+    """Turn a filename stem into a nicer label (no IAM; filename rules only)."""
+    s = stem.strip()
+    if opts.get("strip_leading_index", True):
+        for _ in range(8):
+            prev = s
+            s = re.sub(r"^\s*\d+\s*-\s*", "", s, count=1)
+            if s == prev:
+                break
+    if opts.get("underscore_to_space", True):
+        s = s.replace("_", " ")
+    if opts.get("hyphen_to_space", True):
+        s = s.replace("-", " ")
+    if opts.get("collapse_whitespace", True):
+        s = re.sub(r"\s+", " ", s).strip()
+    if opts.get("title_case", False):
+        s = s.title()
+    return s or stem
+
+
+def sound_display_name(key: str, opts: dict[str, Any]) -> str:
     stem = Path(key).stem
-    return stem or Path(key).name
+    base = stem or Path(key).name
+    return humanize_stem(base, opts)
+
+
+def sound_description_for(
+    display_name: str, defaults: dict[str, Any], pl: dict[str, Any]
+) -> str:
+    mode = pl.get("sound_description")
+    if mode is None:
+        mode = defaults.get("sound_description", "empty")
+    if mode == "same_as_name":
+        return display_name
+    return ""
 
 
 def cmd_sync(repo: Path, config_path: Path, dry_run: bool) -> None:
@@ -204,6 +257,7 @@ def cmd_sync(repo: Path, config_path: Path, dry_run: bool) -> None:
             repeat = pl.get("repeat", default_repeat)
             volume = float(pl.get("volume", default_volume))
             sorting = pl.get("sorting", default_sorting)
+            display_opts = merge_display_name_opts(defaults, pl)
 
             doc = None
             if playlist_id and playlist_id in by_id:
@@ -241,15 +295,20 @@ def cmd_sync(repo: Path, config_path: Path, dry_run: bool) -> None:
                 doc["name"] = name
                 doc["sorting"] = sorting
 
+            if "description" in pl:
+                doc["description"] = pl["description"] if pl["description"] is not None else ""
+
             old_by_path = {s["path"]: s for s in (doc.get("sounds") or []) if s.get("path")}
             keys = list_audio_keys(client, bucket, prefix)
             new_sounds: list[dict[str, Any]] = []
             for sort_idx, key in enumerate(keys):
                 url = quote_s3_url(bucket, region, key)
-                disp = sound_display_name(key)
+                disp = sound_display_name(key, display_opts)
+                sd = sound_description_for(disp, defaults, pl)
                 if url in old_by_path:
                     s = json.loads(json.dumps(old_by_path[url]))
                     s["name"] = disp
+                    s["description"] = sd
                     s["repeat"] = repeat
                     s["volume"] = volume
                     s["sort"] = sort_idx
@@ -262,7 +321,7 @@ def cmd_sync(repo: Path, config_path: Path, dry_run: bool) -> None:
                             "repeat": repeat,
                             "volume": volume,
                             "_id": new_foundry_id(),
-                            "description": "",
+                            "description": sd,
                             "playing": False,
                             "pausedTime": None,
                             "fade": None,

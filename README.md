@@ -51,6 +51,15 @@ The manifest’s `download` field points at `https://github.com/kuzin/s3-playlis
 
 Playlists are driven by [`sync-packs.json`](sync-packs.json): each entry maps a Foundry playlist to an S3 key prefix (under your bucket). The script lists audio objects there and rewrites the corresponding `packs/*.db` lines, **preserving** playlist and sound `_id` values when the HTTPS path is unchanged so worlds stay stable.
 
+### Display names (filename rules, no ID3 / no extra IAM)
+
+`defaults.display_name` controls how **track labels** are derived from each object key’s filename (stem): strip leading `01 - ` style index segments, replace `-` and `_` with spaces, collapse whitespace, optional `title_case`. Per-playlist overrides go under that playlist’s `display_name` (merged over defaults).
+
+- **`defaults.sound_description`**: `"empty"` (default) or `"same_as_name"` to copy the display string into each sound’s `description` field (Foundry’s subtitle-style field).
+- **`description`** on a playlist entry (optional): sets the Foundry **playlist** `description` when present in config; omit the key to leave an existing playlist description unchanged on sync.
+
+Run **`discover`** after changing code so `sync-packs.json` includes the latest `defaults` block; then run **`sync`** so `packs/*.db` pick up new names.
+
 ### Regenerate config from the current DBs
 
 After you change folder layout in the bucket, edit `sync-packs.json` manually or regenerate:

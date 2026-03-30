@@ -4,7 +4,15 @@
   "defaults": {
     "repeat": true,
     "volume": 0.72,
-    "sorting": "a"
+    "sorting": "a",
+    "sound_description": "empty",
+    "display_name": {
+      "strip_leading_index": true,
+      "hyphen_to_space": true,
+      "underscore_to_space": true,
+      "collapse_whitespace": true,
+      "title_case": false
+    }
   },
   "packs": [
     {
@@ -697,343 +705,343 @@
           "prefix": "MGS/Endora Unleashed/",
           "playlist_id": "0YTuZUvz2hUadlpk",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Black Void Origins",
           "prefix": "MGS/Black Void Origins/",
           "playlist_id": "1w8qcUrlU02MrcMQ",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 3 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 3 (Short loops)/",
           "playlist_id": "2J7VfFGM1MHYTIg1",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Exploration Music Collection Vol 1",
           "prefix": "MGS/Exploration Music Collection Vol 1/",
           "playlist_id": "2J7dmLIYiqVS5iCK",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 1",
           "prefix": "MGS/RPG Ambiences Vol 1/",
           "playlist_id": "3s3afyByHRAIHipH",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Fable Under The Table",
           "prefix": "MGS/Fable Under The Table/",
           "playlist_id": "4jIisupoK0k7kmrt",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 5 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 5 (Short loops)/",
           "playlist_id": "67xg68TyReQmWn63",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Combat Music Collection Vol 2",
           "prefix": "MGS/Combat Music Collection Vol 2/",
           "playlist_id": "9ODBlEqDiIIROhRl",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Forest Music Collection Vol 2",
           "prefix": "MGS/Forest Music Collection Vol 2/",
           "playlist_id": "BHBoOp1S4q5TtLno",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Modern Ambiences Vol 1 (Short Loops)",
           "prefix": "MGS/Modern Ambiences Vol 1 (Short Loops)/",
           "playlist_id": "DQg6Zgc4sWD1IwKs",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Combat Music Collection Vol 3",
           "prefix": "MGS/Combat Music Collection Vol 3/",
           "playlist_id": "E55e4xjCcvOA7o0B",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "In The End Remains Oblivion",
           "prefix": "MGS/In The End Remains Oblivion/",
           "playlist_id": "EYj8uYQsuyPDejTy",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Tales Of Ravenia",
           "prefix": "MGS/Tales Of Ravenia/",
           "playlist_id": "GIvuriq4RxAcwvxN",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Gothic Music Collection Vol 2",
           "prefix": "MGS/Gothic Music Collection Vol 2/",
           "playlist_id": "HtmATuG6Jc6FAyXf",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 4",
           "prefix": "MGS/RPG Ambiences Vol 4/",
           "playlist_id": "JT7HLe3PLMCUGomh",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 7",
           "prefix": "MGS/RPG Ambiences Vol 7/",
           "playlist_id": "JYVz9MyX1wlewFbU",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 6",
           "prefix": "MGS/RPG Ambiences Vol 6/",
           "playlist_id": "Lna6aNcIy0Vn3VsE",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "One World After",
           "prefix": "MGS/One World After/",
           "playlist_id": "MJ13Dos3LGVMUuFL",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 2",
           "prefix": "MGS/RPG Ambiences Vol 2/",
           "playlist_id": "MualRao5O4U4EnrV",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 5",
           "prefix": "MGS/RPG Ambiences Vol 5/",
           "playlist_id": "O4rz2KWkB4YCYJrj",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 1 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 1 (Short loops)/",
           "playlist_id": "PPtMonOYg2J1Dl0n",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Arctic Music Collection Vol 1",
           "prefix": "MGS/Arctic Music Collection Vol 1/",
           "playlist_id": "S4srxqQlOMumYnDK",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Modern Ambiences Vol 1",
           "prefix": "MGS/Modern Ambiences Vol 1/",
           "playlist_id": "S5frLnRVJOG5IEel",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 4 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 4 (Short loops)/",
           "playlist_id": "SWiKqHoyqgjHONVE",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Gothic Music Collection Vol 1",
           "prefix": "MGS/Gothic Music Collection Vol 1/",
           "playlist_id": "VycHks9dqjO0hWIL",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Combat Music Collection Vol 1",
           "prefix": "MGS/Combat Music Collection Vol 1/",
           "playlist_id": "WQjPnPl9Ni5FbZOd",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Sci-Fi Ambiences Vol 1 (Short Loops)",
           "prefix": "MGS/Sci-Fi Ambiences Vol 1 (Short loops)/",
           "playlist_id": "WuRWJo7oKFJ6n1AE",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Sci-Fi Ambiences Vol 1",
           "prefix": "MGS/Sci-Fi Ambiences Vol 1/",
           "playlist_id": "XtrL7feDS2gMvXRt",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Fantasy Music Hoard 2 : World of Kor",
           "prefix": "MGS/Fantasy Music Hoard 2 : World of Kor/",
           "playlist_id": "Y07F5kdoEkvANiU7",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Exploration Music Collection Vol 2",
           "prefix": "MGS/Exploration Music Collection Vol 2/",
           "playlist_id": "Y6NqZmpjg6hTtMaf",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Forest Music Collection Vol 1",
           "prefix": "MGS/Forest Music Collection Vol 1/",
           "playlist_id": "dQJTJzJVc62c8X7r",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Fantasy Music Hoard 1 : Journeys",
           "prefix": "MGS/Fantasy Music Hoard 1 : Journeys/",
           "playlist_id": "eQn1d1BzQULIPCFW",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Mystery Music Collection Vol 1",
           "prefix": "MGS/Mystery Music Collection Vol 1/",
           "playlist_id": "fyuuDc1UpVaYsGnY",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 3",
           "prefix": "MGS/RPG Ambiences Vol 3/",
           "playlist_id": "gAinSLIkObLTdXj6",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 2 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 2 (Short loops)/",
           "playlist_id": "gIDcXzD1ptT367mm",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Dungeon Music Collection Vol 2",
           "prefix": "MGS/Dungeon Music Collection Vol 2/",
           "playlist_id": "iu2QWEWuIDUUvav0",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Adventure Music Collection Vol 1",
           "prefix": "MGS/Adventure Music Collection Vol 1/",
           "playlist_id": "jsczrwYbEyovEmGe",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Kingdoms & Conquerors",
           "prefix": "MGS/Kingdoms & Conquerors/",
           "playlist_id": "jxGQvN4COlojmvzh",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Short Themes Collection Vol 1",
           "prefix": "MGS/Short Themes Collection Vol 1/",
           "playlist_id": "nkif1o19JeIzGhhL",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 8",
           "prefix": "MGS/RPG Ambiences Vol 8/",
           "playlist_id": "q1FA2FjbsowDFax2",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 8 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 8 (Short loops)/",
           "playlist_id": "q4FIimKNNyF95UUO",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "The Old Oak",
           "prefix": "MGS/The Old Oak/",
           "playlist_id": "rmM3UjswP6qmi7am",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Mirrors",
           "prefix": "MGS/Mirrors/",
           "playlist_id": "rxOXDIokK1BRZZLR",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Black Void",
           "prefix": "MGS/Black Void/",
           "playlist_id": "sU1xTng0bPMmIsmD",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Magical Music Collection Vol 1",
           "prefix": "MGS/Magical Music Collection Vol 1/",
           "playlist_id": "tiZxCYqF3Akqt3oN",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 7 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 7 (Short loops)/",
           "playlist_id": "uZI1bDXjHl1EbKnc",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Dungeon Music Collection Vol 1",
           "prefix": "MGS/Dungeon Music Collection Vol 1/",
           "playlist_id": "vuU05u9c2X5PZK2Q",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "RPG Ambiences Vol 6 (Short Loops)",
           "prefix": "MGS/RPG Ambiences Vol 6 (Short loops)/",
           "playlist_id": "wLnUFqmcgZdlBhda",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         },
         {
           "name": "Steam-Powered Orchestra",
           "prefix": "MGS/Steam-Powered Orchestra/",
           "playlist_id": "z7Mr7M1OoMJitpoy",
           "repeat": true,
-          "volume": 1
+          "volume": 1.0
         }
       ]
     }
