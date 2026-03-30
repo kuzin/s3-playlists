@@ -56,7 +56,8 @@ Playlists are driven by [`sync-packs.json`](sync-packs.json): each entry maps a 
 `defaults.display_name` controls how **track labels** are derived from each object key’s filename (stem): strip leading `01 - ` style index segments, replace `-` and `_` with spaces, collapse whitespace, and **`title_case`** (default **on**; set to `false` under `display_name` to disable). Per-playlist overrides go under that playlist’s `display_name` (merged over defaults).
 
 - **`defaults.sound_description`**: `"empty"` (default) or `"same_as_name"` to copy the display string into each sound’s `description` field (Foundry’s subtitle-style field).
-- **`description`** on a playlist entry (optional): sets the Foundry **playlist** `description` when present in config; omit the key to leave an existing playlist description unchanged on sync.
+- **`defaults.playlist_description`**: how to populate Foundry **playlist** `description` strings via the `enrich` command. It’s a template rule using placeholders like `{name}` (playlist doc name) and `{prefix}` (S3 key prefix). Defaults to `"{name} playlist. Streamed from {prefix}"`.
+- **`description`** on a playlist entry (optional): per-playlist override for `enrich`. If omitted, `enrich` uses `defaults.playlist_description` for empty descriptions (and you can use `--force` to overwrite).
 
 Run **`discover`** after changing code so `sync-packs.json` includes the latest `defaults` block; then run **`sync`** so `packs/*.db` pick up new names.
 
@@ -75,6 +76,9 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 export AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=...
 python scripts/sync_packs.py sync --config sync-packs.json
+
+# Fill empty playlist blurbs (no AWS; only edits Playlist.description fields)
+python scripts/sync_packs.py enrich --config sync-packs.json
 ```
 
 ### GitHub Actions
