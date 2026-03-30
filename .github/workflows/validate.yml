@@ -1,0 +1,23 @@
+name: Validate manifest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check module.json
+        run: |
+          set -euo pipefail
+          jq empty module.json
+          test "$(jq -r .id module.json)" != "null"
+          test "$(jq -r .version module.json)" != "null"
+          while IFS= read -r p; do
+            test -f "$p" || { echo "Missing pack file: $p"; exit 1; }
+          done < <(jq -r '.packs[].path' module.json)
