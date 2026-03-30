@@ -2,7 +2,7 @@
   "id": "s3-playlists",
   "title": "S3 Playlists",
   "description": "Playlist compendia whose tracks stream from the author’s S3-hosted audio URLs.",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "authors": [
     {
       "name": "Kuz",
