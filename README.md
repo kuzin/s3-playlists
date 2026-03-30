@@ -2,6 +2,8 @@
 
 Foundry VTT module: playlist compendia that reference remote audio (for example HTTPS URLs on S3). No JavaScript; only `module.json` and compendium `.db` files.
 
+**Automation & agent notes:** [AGENTS.md](AGENTS.md) (commit/push expectations, CI overview, release checklist). Cursor loads [.cursor/rules/s3-playlists.mdc](.cursor/rules/s3-playlists.mdc) for the same.
+
 ## Install
 
 **Manifest URL (Foundry or Forge Bazaar):**
@@ -10,10 +12,20 @@ Foundry VTT module: playlist compendia that reference remote audio (for example 
 
 In Foundry: **Add-on Modules → Install Module → Manifest URL**. On [The Forge](https://forgevtt.com/), use the same manifest in the module installer.
 
+## CI workflows
+
+| Workflow | When | What |
+|----------|------|------|
+| **Validate** | Push / PR to `main` | `module.json` JSON + every pack path exists |
+| **Release** | Push tag `*.*.*` | Builds `s3-playlists.zip`, GitHub Release (tag must match `module.json` version) |
+| **Sync packs from S3** | Manual + weekly cron | Lists S3, updates `packs/*.db` (optional bot commit) |
+
+Workflows set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24` so JavaScript actions use Node 24 (avoids deprecation warnings).
+
 ## Release a new version
 
 1. Bump `"version"` in `module.json` and commit to `main`.
-2. Create and push an annotated tag that **exactly** matches that version (example for `1.8.2`):
+2. Create and push a tag that **exactly** matches that version (example for `1.8.2`):
 
    ```bash
    git tag 1.8.2
@@ -22,9 +34,9 @@ In Foundry: **Add-on Modules → Install Module → Manifest URL**. On [The Forg
 
 3. The [Release](.github/workflows/release.yml) workflow builds `s3-playlists.zip` with `module.json` and `packs/` at the **zip root** (correct for Foundry) and attaches it to a GitHub Release.
 
-The manifest’s `download` field points at `.../releases/latest/download/s3-playlists.zip`, so installs and updates track the latest GitHub release automatically once at least one release exists.
+The manifest’s `download` field points at `https://github.com/kuzin/s3-playlists/releases/latest/download/s3-playlists.zip`, so installs and updates track the latest GitHub release once at least one release exists.
 
-**First-time setup:** After merging these workflows, publish your current version once (for example tag `1.8.1`) so `latest/download` resolves.
+**First-time setup:** Publish your current version once (for example tag `1.8.1`) so `latest/download` resolves.
 
 ## Repo layout
 
@@ -32,16 +44,16 @@ The manifest’s `download` field points at `.../releases/latest/download/s3-pla
 |------|--------|
 | `module.json` | Package manifest |
 | `packs/*.db` | Playlist compendia (JSON lines / NeDB-style exports) |
-
-Pull requests run a [validation workflow](.github/workflows/validate.yml) that checks JSON and that every pack path exists.
+| `sync-packs.json` | Maps each playlist to an S3 key prefix (for sync script) |
+| `scripts/sync_packs.py` | `discover` / `sync` from S3 |
 
 ## Sync pack DBs from S3
 
 Playlists are driven by [`sync-packs.json`](sync-packs.json): each entry maps a Foundry playlist to an S3 key prefix (under your bucket). The script lists audio objects there and rewrites the corresponding `packs/*.db` lines, **preserving** playlist and sound `_id` values when the HTTPS path is unchanged so worlds stay stable.
 
-### One-time: regenerate config from the current DBs
+### Regenerate config from the current DBs
 
-After you change folder layout in the bucket, edit `sync-packs.json` manually or regenerate from what is already in the repo:
+After you change folder layout in the bucket, edit `sync-packs.json` manually or regenerate:
 
 ```bash
 python3 scripts/sync_packs.py discover -o sync-packs.json

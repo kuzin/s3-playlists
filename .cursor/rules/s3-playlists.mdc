@@ -1,0 +1,11 @@
+---
+description: Repo conventions — commit/push main, keep README and AGENTS in sync
+alwaysApply: true
+---
+
+# s3-playlists
+
+Follow **AGENTS.md** at the repo root for this repository.
+
+- After substantive edits, **commit and push to `main`** (see AGENTS.md) unless the user says not to.
+- When changing workflows, scripts, or setup: update **README.md** and **AGENTS.md** together.
