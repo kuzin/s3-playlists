@@ -1,0 +1,73 @@
+name: Sync packs from S3
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "Commit and push updated pack DBs to main"
+        type: boolean
+        default: true
+  schedule:
+    # Monday 07:00 UTC — disable the schedule block if you only want manual runs
+    - cron: "0 7 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Read AWS region from sync config
+        id: cfg
+        run: echo "region=$(jq -r .region sync-packs.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ steps.cfg.outputs.region }}
+
+      - name: Sync pack DBs from S3
+        run: python scripts/sync_packs.py sync --config sync-packs.json
+
+      - name: Whether to commit
+        id: should_commit
+        run: |
+          case "${{ github.event_name }}" in
+            schedule)
+              echo "do=true" >> "$GITHUB_OUTPUT"
+              ;;
+            workflow_dispatch)
+              case "${{ inputs.commit }}" in
+                false|False) echo "do=false" >> "$GITHUB_OUTPUT" ;;
+                *) echo "do=true" >> "$GITHUB_OUTPUT" ;;
+              esac
+              ;;
+            *)
+              echo "do=false" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - name: Commit and push
+        if: success() && steps.should_commit.outputs.do == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packs/*.db
+          if git diff --staged --quiet; then
+            echo "No pack changes."
+            exit 0
+          fi
+          git commit -m "Sync pack DBs from S3"
+          git push

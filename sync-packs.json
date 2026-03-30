@@ -1,0 +1,1041 @@
+{
+  "bucket": "foundry-kuz-bucket",
+  "region": "us-east-2",
+  "defaults": {
+    "repeat": true,
+    "volume": 0.72,
+    "sorting": "a"
+  },
+  "packs": [
+    {
+      "path": "packs/ambient.db",
+      "playlists": [
+        {
+          "name": "Soundscapes",
+          "prefix": "Music/soundscapes/",
+          "playlist_id": "7HS49BzUyuI0CGev",
+          "repeat": true,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/combat.db",
+      "playlists": [
+        {
+          "name": "Combat-general",
+          "prefix": "Music/combat/",
+          "playlist_id": "sQVDSPLKtUlH6is0",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-atmospheric",
+          "prefix": "Music/combat-atmospheric/",
+          "playlist_id": "tmurxpJZv86wMD3H",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-badass",
+          "prefix": "Music/combat-badass/",
+          "playlist_id": "h4bZcQAdaNN4BAtl",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-boss",
+          "prefix": "Music/combat-boss/",
+          "playlist_id": "vBDA7JnDDl4gr1zC",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-brutal",
+          "prefix": "Music/combat-brutal/",
+          "playlist_id": "g5AT9TgXDrBSG9wv",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-creatures",
+          "prefix": "Music/combat-creatures/",
+          "playlist_id": "pCC8FDqidhKRVLKA",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-epic",
+          "prefix": "Music/combat-epic/",
+          "playlist_id": "ytCJAFeU9NWH9W5J",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-humans",
+          "prefix": "Music/combat-humans/",
+          "playlist_id": "PnJTETvK8quZwf4z",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-naval",
+          "prefix": "Music/combat-naval/",
+          "playlist_id": "BTKBSaOmvPrQehmo",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-skirmish",
+          "prefix": "Music/combat-skirmish/",
+          "playlist_id": "V53GIXNambqKz6Fo",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-tough",
+          "prefix": "Music/combat-tough/",
+          "playlist_id": "4oBLTFRkgWhZzpFb",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-tribal",
+          "prefix": "Music/combat-tribal/",
+          "playlist_id": "QJnlo8HDK5SLlvuR",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Combat-undead",
+          "prefix": "Music/combat-undead/",
+          "playlist_id": "fo0DyXvT6hPVbu7J",
+          "repeat": true,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/crits.db",
+      "playlists": [
+        {
+          "name": "Crit-fail",
+          "prefix": "Music/crit-fail/",
+          "playlist_id": "ZYpeSRQnBVavow3s",
+          "repeat": false,
+          "volume": 0.72
+        },
+        {
+          "name": "Crit-success",
+          "prefix": "Music/crit-success/",
+          "playlist_id": "6M8k2DTDunnhguhL",
+          "repeat": false,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/exploration.db",
+      "playlists": [
+        {
+          "name": "Exploration-ambient",
+          "prefix": "Music/exploration-ambient/",
+          "playlist_id": "kFXJb3AkAnGEQIuV",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Exploration-fantasy",
+          "prefix": "Music/exploration-fantasy/",
+          "playlist_id": "gnfU5dsRGmGH6Whj",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Exploration-mystic",
+          "prefix": "Music/exploration-mystic/",
+          "playlist_id": "RGHRUjhWUVMMVGUh",
+          "repeat": true,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/locations.db",
+      "playlists": [
+        {
+          "name": "Location-astral-sea",
+          "prefix": "Music/location-astral-sea/",
+          "playlist_id": "ZM7yZGKitg7mPrJc",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-ballroom",
+          "prefix": "Music/location-ballroom/",
+          "playlist_id": "KKwwqiHG6kKuLm6w",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-carnival",
+          "prefix": "Music/location-carnival/",
+          "playlist_id": "hyj8M7yHDCUkvo7M",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-caves",
+          "prefix": "Music/location-caves/",
+          "playlist_id": "Hk30o7xaWzdlBLaO",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-circus",
+          "prefix": "Music/location-circus/",
+          "playlist_id": "8BxlxdunEzyaVLxI",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-desert",
+          "prefix": "Music/location-desert/",
+          "playlist_id": "YSKmBGZVZlWbI0TR",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-dungeon-dark",
+          "prefix": "Music/location-dungeon-dark/",
+          "playlist_id": "yBSlxxlaGTgNn8Yt",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-dungeon",
+          "prefix": "Music/location-dungeon/",
+          "playlist_id": "dM2pYg6mhPop3GcB",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-far-east",
+          "prefix": "Music/location-far-east/",
+          "playlist_id": "1mFxNxlEw4QuNHo9",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-festival",
+          "prefix": "Music/location-festival/",
+          "playlist_id": "WEloPmI2qz3qO4J3",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-fields",
+          "prefix": "Music/location-fields/",
+          "playlist_id": "y2Nn9hPRShkwFT82",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-forest-elf",
+          "prefix": "Music/location-forest-elf/",
+          "playlist_id": "rP3ImfXyEe3rGkPb",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-grand-halls",
+          "prefix": "Music/location-grand-halls/",
+          "playlist_id": "P8903z9gKzvJXFSq",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-holy-temple",
+          "prefix": "Music/location-holy-temple/",
+          "playlist_id": "WZy9mlXSdCnOfUjT",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-ice-snow",
+          "prefix": "Music/location-ice-snow/",
+          "playlist_id": "uvarpTzZuijIbZ2b",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-icewind-dale",
+          "prefix": "Music/location-icewind-dale/",
+          "playlist_id": "eyzDbcMqAgdwAZzh",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-jungle",
+          "prefix": "Music/location-jungle/",
+          "playlist_id": "zP7MyJgPCjuhJrKy",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-magic-school",
+          "prefix": "Music/location-magic-school/",
+          "playlist_id": "eqDFnZszsxBJoSaY",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-metropolis",
+          "prefix": "Music/location-metropolis /",
+          "playlist_id": "jFFAIFRXCe8yt98N",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-monastic-temple",
+          "prefix": "Music/location-monastic-temple/",
+          "playlist_id": "ym0gvGX5rQPvZfuC",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-mountains",
+          "prefix": "Music/location-mountains/",
+          "playlist_id": "2zcA26neiwF8XSg8",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-rustic-dark",
+          "prefix": "Music/location-rustic-dark/",
+          "playlist_id": "LYWsVIKAc0oFVuvT",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-rustic",
+          "prefix": "Music/location-rustic/",
+          "playlist_id": "XziYINbJHR1ckcXA",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-shadowfell",
+          "prefix": "Music/location-shadowfell/",
+          "playlist_id": "jTXxxre6lIwIpGZa",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-spirit-realm",
+          "prefix": "Music/location-spirit-realm/",
+          "playlist_id": "KEzgYVssadksYmUP",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-swamp",
+          "prefix": "Music/location-swamp/",
+          "playlist_id": "FNb50wb1lt5sn5pI",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-tavern",
+          "prefix": "Music/location-tavern/",
+          "playlist_id": "1cbQhKwHUNqexbN0",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-tomb",
+          "prefix": "Music/location-tomb/",
+          "playlist_id": "UFnHxNxVKQS38YSo",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-town",
+          "prefix": "Music/location-town/",
+          "playlist_id": "e5A9opy4iTApWrcy",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-underdark",
+          "prefix": "Music/location-underdark/",
+          "playlist_id": "RChMPzpR9UFq8StZ",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-underwater",
+          "prefix": "Music/location-underwater/",
+          "playlist_id": "VGQDdKMvi3NhOuOa",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Location-village",
+          "prefix": "Music/location-village/",
+          "playlist_id": "mT5QJlBnjxWBtvwU",
+          "repeat": true,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/moods.db",
+      "playlists": [
+        {
+          "name": "Mood-ambivalent",
+          "prefix": "Music/mood-ambivalent/",
+          "playlist_id": "MQLXlluWK2IJZoIA",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-calm",
+          "prefix": "Music/mood-calm/",
+          "playlist_id": "iylcEdDXVVHOkxwc",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-careful",
+          "prefix": "Music/mood-careful/",
+          "playlist_id": "2HubRml8ZNNwhpTC",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-creepy",
+          "prefix": "Music/mood-creepy/",
+          "playlist_id": "UEAPhN0uiQ54uES8",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-desolation",
+          "prefix": "Music/mood-desolation/",
+          "playlist_id": "UU0cYJDZZXkPPicU",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-despair",
+          "prefix": "Music/mood-despair/",
+          "playlist_id": "gpwUxkuH49BsqX9F",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-emotional",
+          "prefix": "Music/mood-emotional/",
+          "playlist_id": "TNvMFDoKLOyxtotj",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-gloom",
+          "prefix": "Music/mood-gloom/",
+          "playlist_id": "saUL8TfQUXKi0Ztl",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-mystical",
+          "prefix": "Music/mood-mystical/",
+          "playlist_id": "X9RvLODUFSmlU9OT",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-peaceful",
+          "prefix": "Music/mood-peaceful/",
+          "playlist_id": "AVsoblfjQ7hb13CQ",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-quiet",
+          "prefix": "Music/mood-quiet/",
+          "playlist_id": "GZ3hywt7TMpV6yiN",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-romantic",
+          "prefix": "Music/mood-romantic/",
+          "playlist_id": "jD8JjfUsckKIFXcN",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-sad",
+          "prefix": "Music/mood-sad/",
+          "playlist_id": "dHGSQgVtpyOn20iP",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Mood-tension",
+          "prefix": "Music/mood-tension/",
+          "playlist_id": "eqIHWZmQDb2BVr31",
+          "repeat": true,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/sfx.db",
+      "playlists": [
+        {
+          "name": "SFX-random",
+          "prefix": "Music/sfx-random/",
+          "playlist_id": "wH3snkWR9e4Qe1Ty",
+          "repeat": false,
+          "volume": 0.72
+        },
+        {
+          "name": "SFX-shanties",
+          "prefix": "Music/sfx-shanties/",
+          "playlist_id": "b1YJkR4hXIrRrT1s",
+          "repeat": false,
+          "volume": 0.72
+        },
+        {
+          "name": "SFX-sitcom",
+          "prefix": "Music/sfx-sitcom/",
+          "playlist_id": "0T7gfHQIvZhnOUH4",
+          "repeat": false,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/special.db",
+      "playlists": [
+        {
+          "name": "Random",
+          "prefix": "Music/random/",
+          "playlist_id": "G1Hk2umBFtz4w3Ra",
+          "repeat": false,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/themes.db",
+      "playlists": [
+        {
+          "name": "Theme-adventure",
+          "prefix": "Music/theme-adventure/",
+          "playlist_id": "j42BTO4tEdlZBTDf",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-chase",
+          "prefix": "Music/theme-chase/",
+          "playlist_id": "CAMa6aaLc56Mj1sJ",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-dramatic",
+          "prefix": "Music/theme-dramatic/",
+          "playlist_id": "KXs2qqS30TSGHBxj",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-dwarven",
+          "prefix": "Music/theme-dwarven/",
+          "playlist_id": "o1QVsGyRGJYvckHK",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-fey",
+          "prefix": "Music/theme-fey/",
+          "playlist_id": "g5eIQBw7zWSoeAHK",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-generic",
+          "prefix": "Music/theme-generic/",
+          "playlist_id": "v5HV9aPBSp4GBZIw",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-horror",
+          "prefix": "Music/theme-horror/",
+          "playlist_id": "qoFoxRyFPbg5brzS",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-journeys",
+          "prefix": "Music/theme-journeys/",
+          "playlist_id": "MXjECaocoyLMbVJk",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-magical",
+          "prefix": "Music/theme-magical/",
+          "playlist_id": "PBrP9TyePlqzbV8t",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-majestic",
+          "prefix": "Music/theme-majestic/",
+          "playlist_id": "4rpysFtdvvtzXV40",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-night",
+          "prefix": "Music/theme-night/",
+          "playlist_id": "i4bifSVlqZvNewkp",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-otherwordly",
+          "prefix": "Music/theme-otherwordly/",
+          "playlist_id": "AMtjN1XTjgQn0dBF",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-pagan",
+          "prefix": "Music/theme-pagan/",
+          "playlist_id": "rjxRNWAAGv9r6hws",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-pirates",
+          "prefix": "Music/theme-pirates/",
+          "playlist_id": "oiOJfoTcs4gyptq2",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-preperation",
+          "prefix": "Music/theme-preperation/",
+          "playlist_id": "kMJD4QtJe5NX7pR3",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-seafaring",
+          "prefix": "Music/theme-seafaring/",
+          "playlist_id": "PBWfwQdIZndvGAVV",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-sneaking",
+          "prefix": "Music/theme-sneaking/",
+          "playlist_id": "jIjgk9tOaGj7TXot",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-story",
+          "prefix": "Music/theme-story/",
+          "playlist_id": "mBg3kynZz1zt3kbo",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-struggle",
+          "prefix": "Music/theme-struggle/",
+          "playlist_id": "3GW3nbkFZeY1K6Ft",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-traveling",
+          "prefix": "Music/theme-traveling/",
+          "playlist_id": "r2Io1Iur7BJtZHaW",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-tribal",
+          "prefix": "Music/theme-tribal/",
+          "playlist_id": "uPs22Cd8SsYGUf2C",
+          "repeat": true,
+          "volume": 0.72
+        },
+        {
+          "name": "Theme-vocal",
+          "prefix": "Music/theme-vocal/",
+          "playlist_id": "PR41IWCQ5pWqeHTT",
+          "repeat": true,
+          "volume": 0.72
+        }
+      ]
+    },
+    {
+      "path": "packs/gelphi.db",
+      "playlists": [
+        {
+          "name": "Endora Unleashed",
+          "prefix": "MGS/Endora Unleashed/",
+          "playlist_id": "0YTuZUvz2hUadlpk",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Black Void Origins",
+          "prefix": "MGS/Black Void Origins/",
+          "playlist_id": "1w8qcUrlU02MrcMQ",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 3 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 3 (Short loops)/",
+          "playlist_id": "2J7VfFGM1MHYTIg1",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Exploration Music Collection Vol 1",
+          "prefix": "MGS/Exploration Music Collection Vol 1/",
+          "playlist_id": "2J7dmLIYiqVS5iCK",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 1",
+          "prefix": "MGS/RPG Ambiences Vol 1/",
+          "playlist_id": "3s3afyByHRAIHipH",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Fable Under The Table",
+          "prefix": "MGS/Fable Under The Table/",
+          "playlist_id": "4jIisupoK0k7kmrt",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 5 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 5 (Short loops)/",
+          "playlist_id": "67xg68TyReQmWn63",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Combat Music Collection Vol 2",
+          "prefix": "MGS/Combat Music Collection Vol 2/",
+          "playlist_id": "9ODBlEqDiIIROhRl",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Forest Music Collection Vol 2",
+          "prefix": "MGS/Forest Music Collection Vol 2/",
+          "playlist_id": "BHBoOp1S4q5TtLno",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Modern Ambiences Vol 1 (Short Loops)",
+          "prefix": "MGS/Modern Ambiences Vol 1 (Short Loops)/",
+          "playlist_id": "DQg6Zgc4sWD1IwKs",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Combat Music Collection Vol 3",
+          "prefix": "MGS/Combat Music Collection Vol 3/",
+          "playlist_id": "E55e4xjCcvOA7o0B",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "In The End Remains Oblivion",
+          "prefix": "MGS/In The End Remains Oblivion/",
+          "playlist_id": "EYj8uYQsuyPDejTy",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Tales Of Ravenia",
+          "prefix": "MGS/Tales Of Ravenia/",
+          "playlist_id": "GIvuriq4RxAcwvxN",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Gothic Music Collection Vol 2",
+          "prefix": "MGS/Gothic Music Collection Vol 2/",
+          "playlist_id": "HtmATuG6Jc6FAyXf",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 4",
+          "prefix": "MGS/RPG Ambiences Vol 4/",
+          "playlist_id": "JT7HLe3PLMCUGomh",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 7",
+          "prefix": "MGS/RPG Ambiences Vol 7/",
+          "playlist_id": "JYVz9MyX1wlewFbU",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 6",
+          "prefix": "MGS/RPG Ambiences Vol 6/",
+          "playlist_id": "Lna6aNcIy0Vn3VsE",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "One World After",
+          "prefix": "MGS/One World After/",
+          "playlist_id": "MJ13Dos3LGVMUuFL",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 2",
+          "prefix": "MGS/RPG Ambiences Vol 2/",
+          "playlist_id": "MualRao5O4U4EnrV",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 5",
+          "prefix": "MGS/RPG Ambiences Vol 5/",
+          "playlist_id": "O4rz2KWkB4YCYJrj",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 1 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 1 (Short loops)/",
+          "playlist_id": "PPtMonOYg2J1Dl0n",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Arctic Music Collection Vol 1",
+          "prefix": "MGS/Arctic Music Collection Vol 1/",
+          "playlist_id": "S4srxqQlOMumYnDK",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Modern Ambiences Vol 1",
+          "prefix": "MGS/Modern Ambiences Vol 1/",
+          "playlist_id": "S5frLnRVJOG5IEel",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 4 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 4 (Short loops)/",
+          "playlist_id": "SWiKqHoyqgjHONVE",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Gothic Music Collection Vol 1",
+          "prefix": "MGS/Gothic Music Collection Vol 1/",
+          "playlist_id": "VycHks9dqjO0hWIL",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Combat Music Collection Vol 1",
+          "prefix": "MGS/Combat Music Collection Vol 1/",
+          "playlist_id": "WQjPnPl9Ni5FbZOd",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Sci-Fi Ambiences Vol 1 (Short Loops)",
+          "prefix": "MGS/Sci-Fi Ambiences Vol 1 (Short loops)/",
+          "playlist_id": "WuRWJo7oKFJ6n1AE",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Sci-Fi Ambiences Vol 1",
+          "prefix": "MGS/Sci-Fi Ambiences Vol 1/",
+          "playlist_id": "XtrL7feDS2gMvXRt",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Fantasy Music Hoard 2 : World of Kor",
+          "prefix": "MGS/Fantasy Music Hoard 2 : World of Kor/",
+          "playlist_id": "Y07F5kdoEkvANiU7",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Exploration Music Collection Vol 2",
+          "prefix": "MGS/Exploration Music Collection Vol 2/",
+          "playlist_id": "Y6NqZmpjg6hTtMaf",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Forest Music Collection Vol 1",
+          "prefix": "MGS/Forest Music Collection Vol 1/",
+          "playlist_id": "dQJTJzJVc62c8X7r",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Fantasy Music Hoard 1 : Journeys",
+          "prefix": "MGS/Fantasy Music Hoard 1 : Journeys/",
+          "playlist_id": "eQn1d1BzQULIPCFW",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Mystery Music Collection Vol 1",
+          "prefix": "MGS/Mystery Music Collection Vol 1/",
+          "playlist_id": "fyuuDc1UpVaYsGnY",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 3",
+          "prefix": "MGS/RPG Ambiences Vol 3/",
+          "playlist_id": "gAinSLIkObLTdXj6",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 2 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 2 (Short loops)/",
+          "playlist_id": "gIDcXzD1ptT367mm",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Dungeon Music Collection Vol 2",
+          "prefix": "MGS/Dungeon Music Collection Vol 2/",
+          "playlist_id": "iu2QWEWuIDUUvav0",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Adventure Music Collection Vol 1",
+          "prefix": "MGS/Adventure Music Collection Vol 1/",
+          "playlist_id": "jsczrwYbEyovEmGe",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Kingdoms & Conquerors",
+          "prefix": "MGS/Kingdoms & Conquerors/",
+          "playlist_id": "jxGQvN4COlojmvzh",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Short Themes Collection Vol 1",
+          "prefix": "MGS/Short Themes Collection Vol 1/",
+          "playlist_id": "nkif1o19JeIzGhhL",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 8",
+          "prefix": "MGS/RPG Ambiences Vol 8/",
+          "playlist_id": "q1FA2FjbsowDFax2",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 8 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 8 (Short loops)/",
+          "playlist_id": "q4FIimKNNyF95UUO",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "The Old Oak",
+          "prefix": "MGS/The Old Oak/",
+          "playlist_id": "rmM3UjswP6qmi7am",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Mirrors",
+          "prefix": "MGS/Mirrors/",
+          "playlist_id": "rxOXDIokK1BRZZLR",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Black Void",
+          "prefix": "MGS/Black Void/",
+          "playlist_id": "sU1xTng0bPMmIsmD",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Magical Music Collection Vol 1",
+          "prefix": "MGS/Magical Music Collection Vol 1/",
+          "playlist_id": "tiZxCYqF3Akqt3oN",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 7 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 7 (Short loops)/",
+          "playlist_id": "uZI1bDXjHl1EbKnc",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Dungeon Music Collection Vol 1",
+          "prefix": "MGS/Dungeon Music Collection Vol 1/",
+          "playlist_id": "vuU05u9c2X5PZK2Q",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "RPG Ambiences Vol 6 (Short Loops)",
+          "prefix": "MGS/RPG Ambiences Vol 6 (Short loops)/",
+          "playlist_id": "wLnUFqmcgZdlBhda",
+          "repeat": true,
+          "volume": 1
+        },
+        {
+          "name": "Steam-Powered Orchestra",
+          "prefix": "MGS/Steam-Powered Orchestra/",
+          "playlist_id": "z7Mr7M1OoMJitpoy",
+          "repeat": true,
+          "volume": 1
+        }
+      ]
+    }
+  ]
+}

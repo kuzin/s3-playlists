@@ -1,0 +1,3 @@
+boto3>=1.34.0
+# Optional: only if you use a .yaml / .yml sync config instead of sync-packs.json
+# PyYAML>=6.0.1

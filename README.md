@@ -34,3 +34,49 @@ The manifest’s `download` field points at `.../releases/latest/download/s3-pla
 | `packs/*.db` | Playlist compendia (JSON lines / NeDB-style exports) |
 
 Pull requests run a [validation workflow](.github/workflows/validate.yml) that checks JSON and that every pack path exists.
+
+## Sync pack DBs from S3
+
+Playlists are driven by [`sync-packs.json`](sync-packs.json): each entry maps a Foundry playlist to an S3 key prefix (under your bucket). The script lists audio objects there and rewrites the corresponding `packs/*.db` lines, **preserving** playlist and sound `_id` values when the HTTPS path is unchanged so worlds stay stable.
+
+### One-time: regenerate config from the current DBs
+
+After you change folder layout in the bucket, edit `sync-packs.json` manually or regenerate from what is already in the repo:
+
+```bash
+python3 scripts/sync_packs.py discover -o sync-packs.json
+```
+
+### Local sync (needs AWS credentials)
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+export AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=...
+python scripts/sync_packs.py sync --config sync-packs.json
+```
+
+### GitHub Actions
+
+The [Sync packs from S3](.github/workflows/sync-s3-packs.yml) workflow runs on **workflow_dispatch** (optional **commit** checkbox) and on a **weekly schedule**. Add repository secrets:
+
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+
+IAM can be minimal: **`s3:ListBucket`** on the bucket (listing prefixes is enough; no `GetObject` required). Example:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListAudioPrefixes",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME"
+    }
+  ]
+}
+```
+
+If you use a prefix-only IAM condition, include every top-level prefix you use (for example `Music/*` and `MGS/*`).
