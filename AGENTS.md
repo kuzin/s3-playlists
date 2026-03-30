@@ -26,6 +26,22 @@ Unless the user explicitly asks otherwise (e.g. “don’t push”, draft PR onl
 
 Workflow-level **`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true`** avoids Node 20 deprecation warnings for JS actions.
 
+### Trigger **Sync packs from S3** via GitHub CLI (`gh`)
+
+From the repo root (or pass `-R kuzin/s3-playlists`), after **`gh auth login`** with a token that includes **`workflow`** (the default `repo` scope usually includes it):
+
+```bash
+# Sync from S3 and commit/push updated packs/*.db to main (same as UI checkbox on)
+gh workflow run sync-s3-packs.yml --ref main -f commit=true
+
+# Sync only; do not commit (inspect logs / confirm no unwanted diffs)
+gh workflow run sync-s3-packs.yml --ref main -f commit=false
+```
+
+Watch the latest run: `gh run list --workflow=sync-s3-packs.yml -L 1` then `gh run watch <RUN_ID>`.
+
+Agents in Cursor can run these commands when the user asks, if `gh auth status` works in that environment.
+
 ## Secrets (repository)
 
 - **`AWS_ACCESS_KEY_ID`**, **`AWS_SECRET_ACCESS_KEY`** — for Sync workflow; IAM needs at least **`s3:ListBucket`** on the bucket.
@@ -50,7 +66,7 @@ python scripts/sync_packs.py sync --config sync-packs.json
 
 ## Documentation maintenance
 
-- **README.md** — User-facing: install, release, sync, IAM snippet, links.
-- **AGENTS.md** (this file) — Agent/operator: conventions, CI table, commit/push expectation, release steps.
+- **README.md** — User-facing: install, release, sync, IAM snippet, `gh workflow run` for Sync, links.
+- **AGENTS.md** (this file) — Agent/operator: conventions, CI table, commit/push expectation, `gh` dispatch for Sync, release steps.
 
 When adding or changing workflows, scripts, or required secrets, **update both** README and AGENTS.

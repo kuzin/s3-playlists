@@ -79,7 +79,18 @@ python scripts/sync_packs.py sync --config sync-packs.json
 
 ### GitHub Actions
 
-The [Sync packs from S3](.github/workflows/sync-s3-packs.yml) workflow runs on **workflow_dispatch** (optional **commit** checkbox) and on a **weekly schedule**. Add repository secrets:
+The [Sync packs from S3](.github/workflows/sync-s3-packs.yml) workflow runs on **workflow_dispatch** (optional **commit** checkbox) and on a **weekly schedule**.
+
+**Trigger from the terminal** ([GitHub CLI](https://cli.github.com/) `gh`, after `gh auth login`):
+
+```bash
+gh workflow run sync-s3-packs.yml --ref main -f commit=true   # sync + commit packs to main
+gh workflow run sync-s3-packs.yml --ref main -f commit=false  # sync only, no commit
+```
+
+Run from a clone of this repo or add `-R kuzin/s3-playlists`. Same as the Actions tab **Run workflow** button.
+
+**Repository secrets** (required for the workflow to talk to S3):
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
