@@ -24,7 +24,7 @@ jobs:
             exit 1
           fi
 
-      - name: Build Foundry install zip (flat root: module.json + packs/)
+      - name: "Build Foundry install zip (flat root: module.json + packs/)"
         run: zip -r s3-playlists.zip module.json packs
 
       - name: Publish GitHub Release
